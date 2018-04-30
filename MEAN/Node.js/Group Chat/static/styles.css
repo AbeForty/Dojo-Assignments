@@ -1,0 +1,13 @@
+.currentPerson{
+    background-color: gainsboro;
+    color: black;
+}
+.otherPerson{
+    background-color: dodgerblue;
+    color: white;
+}
+#chat{
+    height:500px;
+    width:500px;
+    overflow: scroll;
+}

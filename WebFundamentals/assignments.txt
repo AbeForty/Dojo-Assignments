@@ -1,0 +1,19 @@
+C:\Users\ac765\Desktop\Test\DojoAssignments>dir /b /s
+C:\Users\ac765\Desktop\Test\DojoAssignments\indent.html
+C:\Users\ac765\Desktop\Test\DojoAssignments\MEAN
+C:\Users\ac765\Desktop\Test\DojoAssignments\Python
+C:\Users\ac765\Desktop\Test\DojoAssignments\Ruby
+C:\Users\ac765\Desktop\Test\DojoAssignments\WebFundamentals
+C:\Users\ac765\Desktop\Test\DojoAssignments\MEAN\about.txt
+C:\Users\ac765\Desktop\Test\DojoAssignments\Python\about.txt
+C:\Users\ac765\Desktop\Test\DojoAssignments\Ruby\about.txt
+C:\Users\ac765\Desktop\Test\DojoAssignments\WebFundamentals\about.txt
+C:\Users\ac765\Desktop\Test\DojoAssignments\WebFundamentals\CSS
+C:\Users\ac765\Desktop\Test\DojoAssignments\WebFundamentals\Git
+C:\Users\ac765\Desktop\Test\DojoAssignments\WebFundamentals\HTML
+C:\Users\ac765\Desktop\Test\DojoAssignments\WebFundamentals\JavaScript
+C:\Users\ac765\Desktop\Test\DojoAssignments\WebFundamentals\CSS\about.txt
+C:\Users\ac765\Desktop\Test\DojoAssignments\WebFundamentals\Git\about.txt
+C:\Users\ac765\Desktop\Test\DojoAssignments\WebFundamentals\HTML\about.txt
+C:\Users\ac765\Desktop\Test\DojoAssignments\WebFundamentals\HTML\indentation.html
+C:\Users\ac765\Desktop\Test\DojoAssignments\WebFundamentals\JavaScript\about.txt

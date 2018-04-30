@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Great Number Game</title>
+    <style>
+        #message{
+            visibility: {{visibilityValue}}
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Great Number Game</h1>
+    <p>I'm thinking of a number from 1 to 100.</p>
+    <p>Take a guess!</p>
+    <br>
+    <p id ="error-message">{{message}}</p>
+    <br>
+    <form action = '/check' method = "POST">
+        <input name = "txtNumber" type ="text">
+        <button>Submit</button>
+    </form>
+    <form action = '/reset' method = "POST">
+        <button>Reset</button>
+    </form>
+</body>
+</html>

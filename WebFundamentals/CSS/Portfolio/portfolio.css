@@ -1,0 +1,141 @@
+/*CSS reset settings here*/
+*{
+    margin: 0px;
+    padding: 0px;
+   }
+   #header{
+    /* height: 150px; */
+    background-color: white;
+    display: block;
+    padding: 20px;
+    /* margin-bottom: 10px;    */
+   }
+   #name{
+    font-family: "Comic Sans MS";
+    display: inline-block;
+    vertical-align: top;
+   }
+   #navigation{
+    height: 300px;
+    width: 200px;
+    background-color: blue;
+    display: inline-block;
+    vertical-align: top;
+   }
+   #main_content{
+    height: 900px;
+    width: 100%;
+    background-color: rgb(76,56,65);
+    /* padding:10px; */
+    /* display: inline-block; */
+    /* margin-left: 20px; */
+    vertical-align: top;
+    font-family: Arial, Helvetica, sans-serif;
+    margin:auto;
+   }
+   .subcontents{
+    height: 260px;
+    width: 685px;
+    background-color: rgb(218,206,218);
+    display: inline-block;
+    margin: 10px;
+    vertical-align: top;
+   }
+   .subcontents-2{
+    height: 550px;
+    width: 350px;
+    background-color: rgb(218,206,218);
+    display: inline-block;
+    margin: 10px;
+    vertical-align: top;
+   }
+   .subcontents-3{
+    
+    height: 570px;
+    width: 1350px;
+    /* background-color: blue; */
+    display: block;
+    margin: 10px;
+    /* vertical-align: top; */
+   }
+   #footer{
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    text-align:center;
+    /* margin-left:10px; */
+   }
+#hero{
+    height: 250px;
+    width: 400px;
+    display: inline-block;
+    margin: 10px;
+    vertical-align: top;
+    border: solid 5px gray;
+    /* display: inline-block; */
+}
+.portfolioimg{
+    height: 30%;
+    width: 100%;
+    /* display: inline-block; */
+}
+.box-header{
+    height:25px;
+    background-color: darkgrey;
+    font-weight: normal;
+    text-align:left;
+    vertical-align: top;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    padding: 3px;
+}
+#slogan{
+    /* left:945px;
+    position:absolute; */
+    vertical-align: top;
+    text-align: right;
+    display: inline;
+    margin-left: 800px;
+}
+#about{
+    margin:auto;
+}
+.logo{
+    height: 50px;
+    width: 50px;
+    margin-left:14px;
+    margin-top: 5px;
+    /* display: inline-block;
+    margin: 10px;
+    vertical-align: top;
+    display: inline-block; */
+}
+.button{
+    background-color: green;
+    color: white;
+    text-align: center;
+    /* align-content: center; */
+    border-radius: 5px;
+    margin: auto;
+    width:50%;
+    display: block;
+    padding: 2px;
+    border:solid 1px black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 15px;
+}
+.social{
+    text-align:center;
+    height: 15px;
+    width: 15px;
+}
+a{
+color:black;
+}
+/* .imgdescription{
+    height:10px;
+} */
+
+
+   

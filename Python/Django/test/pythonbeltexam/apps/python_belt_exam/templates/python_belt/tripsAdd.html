@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Plan</title>
+</head>
+<body>
+    {% if messages %} 
+        {%for message in messages %}
+            <h4>{{message}}</h4>
+        {%endfor%}
+    {%endif%}
+    <div id = "nav">
+        <a href = "/travels">Home</a>
+        <a href = "/logout">Logout</a>
+    </div>
+    <h2>Add a trip</h2>
+        <form action = "/travels/process" method = "POST">
+            {% csrf_token %}
+            <label for="destination">Destination:</label>
+            <input type="text" name="destination">
+            <br>
+            <label for="description">Desciption:</label>    
+            <input type="text" name="description">
+            </div>
+            <br>
+            <label for="travelDateFrom">Travel Date From:</label>
+            <input type="date" name="travelDateFrom">
+            <br>
+            <label for="travelDateTo">Travel Date To:</label>
+            <input type = "date" name="travelDateTo"/>
+            <br> 
+            <button>Add</button>
+        </form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+#color_form{
+    width:600px;
+    display:inline-block;
+}
+#session_list{
+    border-left:solid black 5px;
+    height:auto;
+    width:auto;
+    vertical-align: top;
+    display:inline-block
+}
+#addButton{
+    background-color: rgb(159, 197, 249);
+}
+#clearButton{
+    margin-left: 15px;
+    background-color: rgb(234, 152, 154);
+    vertical-align: top;
+}
+.redBig{
+    color:red;
+    font-size:large
+}
+.red{
+    color:red;
+}
+.greenBig{
+    color:green;
+    font-size:large
+}
+.green{
+    color:green;
+}
+.blueBig{
+    color:rgb(0,112,192);
+    font-size:large
+}
+.blue{
+    color:rgb(0,112,192);
+}
+p{
+    margin-left: 15px;
+}

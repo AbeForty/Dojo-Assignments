@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type ="text/javascript">
+        $(document).ready(function(){
+           // this triggers the connection event in our server!
+            var socket  = io.connect();
+           // we'll write all the socket stuff after the above line!         
+            $('#reset').click(function () {
+                socket.emit("reset", {message:"reset count"});
+            });
+
+            $('#epicButton').click(function () { 
+                socket.emit("posting_data", {message:"update count"});               
+            });
+            
+            socket.on('server_response', function (data) {
+                $("#buttonMsg").html("The button has been pushed " + data.count  + " time (s)");
+            });
+        })
+   </script>
+</head>
+<body>
+    <div id = "submittedData"><p id ="dataMessage"></p></div>
+    <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+    <!-- <form action='/process' method='post'> -->    
+        <h1 id = "buttonMsg">The button has been pushed 0 time (s)</h1>
+        <h3>Push the button to update the count.</h3>
+        <button id="epicButton">Push the epic button</button>
+        <button id="reset">Reset</button>
+    <!-- </form> -->
+</body>
+</html>

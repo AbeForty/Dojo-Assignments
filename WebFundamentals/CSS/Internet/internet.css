@@ -1,0 +1,180 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    /* padding:0;
+    margin:0; */
+}
+body{
+    background-color:rgb(252, 252, 252);
+}
+.net{
+    color:rgb(26,101,158);
+    text-decoration: none;
+}
+#internet{
+    vertical-align: middle;
+    font-size:40px;
+    display:inline-block;
+    /* padding-bottom:90px; */
+    height:140px;
+}
+#logo{
+    width:100px;
+    height:100px;
+    display: inline-block;
+}
+#pagetitle{
+    background-color:rgb(81,131,172);
+    /* vertical-align: middle; */
+    font-size:40px;
+    display:block;
+    /* padding-bottom:90px; */
+    height:50px;
+    color:white;
+    padding:5px;
+}
+#logoAndTitle{
+    height:100px;
+}
+#internet-red{
+    color:red;
+}
+#left-side{
+    width:220px;
+    display:inline-block;
+    margin-right:20px;
+}
+#header{
+    background-color:white;
+}
+#btnVideo{
+    background-color: orange;
+}
+#btnResources{
+    background-color: royalblue;
+}
+#btnLearnMore{
+    background-color: rgb(61,201,223);
+    height:50px;
+    width:175px;
+    margin-left:20px;
+    /* margin-bottom:35px; */
+    margin-top:25px;
+}
+#ad{
+    height: 450px;
+    width:220px;
+    background-image:url('ad_background.png');
+    background-repeat: no-repeat;  
+    }
+.button{
+    border-radius:3px;
+    color:white;
+    font-size: 16pt;
+    border: none;
+    padding:3px;
+    margin-bottom: 10px;
+    box-shadow: 1px 3px 2px black;
+    height:50px;
+    width:220px;
+}
+#ninja{
+    height:150px;
+    width:110px;
+    margin-left:40px;
+    /* margin-bottom:60px; */
+}
+#adtext{
+    color:white;
+    font-size:24pt;
+    text-align:center;
+    margin:top 10px;
+    display:inline-block;
+}
+#homebutton{
+    height:25px;
+    width:25px;
+}
+#right-side{
+    display:inline-block;
+    vertical-align: top;
+    margin-right:0px;
+    padding-right:0px;
+    width: 1090px;
+}
+#phone{
+    height:75px;
+    width:75px;
+    display:inline-block;
+}
+#phoneArea{
+    display:inline-block;
+    margin-left: 800px;
+    vertical-align: top;
+    margin-right:0px;
+    padding-right:0px;
+}
+#homenav{
+    display:inline-block;
+    vertical-align: top;
+}
+#hours{
+    font-size:7pt;
+    display:inline-block;
+    vertical-align: top;
+}
+#phonenumber{
+    margin-top:0;
+    font-size:15pt;
+    color:rgb(73,204,225);
+    font-weight:bold;
+    margin-bottom:0px;
+    /* display: block; */
+}
+.keywords{
+    color:rgb(44,169,188)!important;
+}
+.title{
+    color:rgb(34,100,158);
+    font-size:15pt;
+    font-weight:bold;
+}
+#phoneRight{
+    vertical-align: top;
+    display:inline-block;
+}
+#intphone{
+    font-size:7pt;
+    margin-bottom:0px;
+}
+.bold{
+    font-weight:bold;
+}
+#client-server{
+   height:130px;
+   width:350px;
+   margin-left:200px;
+}
+#big3img{
+    height:100px;
+    width:110px;
+    display:inline-block;
+    margin-right:0;
+    padding-right:0;
+    max-width:110px;
+   margin-top:20px;
+}
+#thebig3{
+    width:915px;
+    vertical-align: top;
+    display:inline-block;
+    border: solid rgb(0,133,224) 3px;
+    border-bottom:none;
+}
+#big3Right{
+    display:inline-block;
+    vertical-align: top;
+    width:800px;
+}
+a{
+    text-decoration: none;
+}

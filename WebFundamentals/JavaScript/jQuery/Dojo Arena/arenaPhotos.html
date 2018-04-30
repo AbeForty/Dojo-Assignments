@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Arena Photos</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="arenaPhotos.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var clicked = false;
+            var selected=false;
+            var selected2 =false;
+            $("#players").hide();
+            $("button").click(function () {
+                // console.log(($(this).attr("id") +".jpg"));
+                if ($(this).attr("id") != "planet") {
+                    $("body").css("background-image", "url(" + ($(this).attr("id") + ".jpg)"));
+                }
+                else {
+                    $("body").css("background-image", "url(earth.jpg)");
+                }
+                $("#arena").hide();
+                $("#players").show();
+                clicked=true;
+            });
+            $("button").hover(function () {
+                if ($(this).attr("id") != "planet") {
+                    $("body").attr("style", "background-image: url(" + ($(this).attr("id") + ".jpg)"));
+                }
+                else {
+                    $("body").attr("style", "background-image: url(earth.jpg)");
+                }
+            }, function () {
+                if (clicked===false){
+                $("body").attr("style", "background-image: none");
+                }
+            });
+            $("#leftPlayer").hover(function () {
+                $("#player1").attr("src", $(this).val()+".png");
+            }, function () {
+                if (selected===false){
+                    $("#player1").attr("src", "");
+                }
+            });
+            $("#rightPlayer").hover(function () {
+                $("#player2").attr("src", $(this).val()+".png");
+            }, function () {
+                if (selected2===false){
+                    $("#player2").attr("src", "");
+                }
+            });
+            $("#leftPlayer").click(function(){
+                $("#player1").attr("src", $(this).val()+".png");
+                selected = true
+            })
+            $("#rightPlayer").click(function(){
+               $("#player2").attr("src", $(this).val()+".png");
+               selected2 = true
+            })
+      });
+    </script>
+    <!-- <script src="arenaPhotos.js"></script> -->
+</head>
+
+<body>
+    <div id="arena" class="windows">
+        <h1>Select Arena</h1>
+        <button id="beach">beach</button>
+        <button id="planet">planet</button>
+        <button id="dojo">dojo</button>
+        <button id="forest">forest</button>
+        <button id="matrix">matrix</button>
+        <button id="snow">snow</button>
+    </div>
+    <div id="players" class="windows">
+        <h1>Select Players</h1>
+        <select id="leftPlayer" class="playerSelect">
+            <option value="mikey">Mikey</option>
+            <option value="raphael">Raphael</option>
+            <option value="leo">Leo</option>
+            <option value="donny">Donny</option>
+        </select>
+        <select id="rightPlayer" class="playerSelect">
+            <option value="mikey">Mikey</option>
+            <option value="raphael">Raphael</option>
+            <option value="leo">Leo</option>
+            <option value="donny">Donny</option>
+        </select>
+    </div>
+    <img src="" class="player" id="player1">
+    <img src="" class="player" id="player2">
+</body>
+
+</html>

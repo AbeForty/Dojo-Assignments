@@ -1,0 +1,75 @@
+#register{
+    width: 300px;
+    display:inline-block;
+}
+#login{
+    width: 300px;
+    display:inline-block;
+    vertical-align: top;
+}
+span{
+    height:20px;
+    width:20px;
+}
+.star{
+    height:20px;
+    width:20px;
+    background-image: url("stargray.png");
+    background-size: cover;
+    display:inline-block;
+}
+.starChecked{
+    height:20px;
+    width:20px;
+    background-image: url("star.png");
+    background-size: cover;
+    display:inline-block;
+}
+#recentReviews{
+    width:700px;
+    display:inline-block;
+}
+#otherReviews{
+    height:300px;
+    width: 300px;
+    overflow:scroll;
+    display:inline-block;
+    vertical-align: top;
+}
+#bookdetails{
+    width:700px;
+    display:inline-block;
+}
+#addReview{
+    height:500px;
+    width: 500px;
+    display:inline-block;
+    vertical-align: top;
+}
+.navlink{
+    text-align:right;
+}
+#nav{
+    display:inline-block;
+    text-align:right;
+}
+label{
+    vertical-align: top;
+}
+textarea{
+    height:100px;
+    width:200px;
+}
+#deleteReview{
+    display:inline-block;
+}
+#deleteBTN{
+    text-decoration: underline;
+    color: blue;
+    background-color: white;
+    border: none;
+}
+#welcome{
+    margin-right:900px;
+    display:inline-block;
+}

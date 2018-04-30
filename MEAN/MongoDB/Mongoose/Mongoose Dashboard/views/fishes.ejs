@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quoting Dojo</title>
+</head>
+<body>
+    <h1>Here are the awesome quotes!</h1>
+    <!-- <h1>Dojo Survey</h1>
+    <h4>Fill out this survey</h4> -->
+    <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+    <% fishes.forEach(function (fish) { %>
+        <p>Name: <%= fish.name %></p> <!-- note you defined the field as Name not name -->
+        <p>Species: <%= fish.species %></p>
+        <form action="fishes/edit/<%= fish._id %>">
+            <button>Edit</button>
+        </form>
+        <form action="fishes/destroy/<%= fish._id %>">
+            <button>Delete</button>
+        </form>
+        <hr>
+    <% }) %>
+    <!-- <% for (myQuote in quotes) { %>
+        <p><%= myQuote.quote %></p>
+        <p><%= myQuote.createdAt %></p>
+    <% } %> -->
+</body>
+</html>

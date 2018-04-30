@@ -1,0 +1,7 @@
+I first created a new directory called basic_repo
+Then created hello.txt, test.html, styles.css
+added each of the files to the stage
+committed each file with message to the git repository
+added remote origin https://github.com/AbeForty/basic_repo.git
+push the origin to the master
+checked github

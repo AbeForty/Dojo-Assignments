@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+    <h1>Dojo Survey</h1>
+    <h4>Fill out this survey</h4>
+    <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+    <form action='/process' method='post'>
+        Your Name: {{name}} 
+        <br>     
+        Dojo Location: {{location}}            
+        <br>
+        Favorite Language: {{language}}
+        <br>
+        Comment (optional): {{comment}}
+    </form>
+</body>
+</html>

@@ -1,0 +1,114 @@
+*{
+    padding:0;
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#header{
+    background-color:rgb(63,77,90);
+}
+#dojoimg{
+    height: 100%;
+    width:170px;
+    display:inline-block;
+}
+#header{
+    width:100%;
+    height:50px;
+}
+#nav li{    
+    list-style-type: none;
+    display:inline-block;
+    margin-right:15px;
+}
+#nav {    
+    display:inline-block;
+    vertical-align:top;
+    margin-top:15px;
+    color:white;
+}
+#pfp{
+    height:100%;
+    width:50px;
+    display:inline-block;
+    vertical-align:top;
+    border-radius: 25px;
+    /* margin-top:10px; */
+}
+#helloMsg{
+    display:inline-block;
+    vertical-align:top;
+    margin-top:15px;
+    color:white;
+    font-style: italic;
+}
+#student{
+    display:inline-block;
+    vertical-align:top;
+    margin-top:15px;
+    color:white;
+    font-style: bold;
+}
+#login{
+    display:inline-block;
+    margin-left: 700px;
+    vertical-align:top;
+}
+#contCoding{
+    display:inline-block;
+    background-color: rgb(64,153,193);
+    color:white;
+    margin-left: 1150px;
+    border: outset 0px;
+}
+.contheader{
+    background-color: rgb(64,153,193);
+    color:white;
+    font-size:15pt;
+}
+.content{
+    height:300px;
+    width:430px;
+    display:inline-block;
+    border-radius:5px;
+    margin-right:5px;
+    vertical-align: top;
+    margin-top:20px;
+    margin-left:15px;
+    border:solid gray 1px;
+}
+.icon{
+    height:50px;
+    width:50px;
+    margin-right:35px;
+    margin-left:40px;
+    margin-top:15px;
+}
+#container{
+    background-color: rgb(243,244,248)
+}
+.framework{
+    display:inline-block;
+    margin-top:25px;
+    background-color:rgb(247,248,252);
+    border:solid gray 0.5px;
+    border-radius: 5px;
+    height: 90px;
+    margin-left:10px;
+    /* height:80px;
+    width:80px; */
+}
+.language{
+    display:inline-block;
+    width:60%;
+}
+.subtitle{
+    text-align:center;
+    font-size:10pt;
+}
+.version{
+    display:inline-block;
+    width:40%;
+}
+#h2{
+    border-bottom: solid gray 1px;
+}

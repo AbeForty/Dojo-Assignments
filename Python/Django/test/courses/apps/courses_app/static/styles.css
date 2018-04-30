@@ -1,0 +1,23 @@
+#buttonAdd{
+    background-color: rgb(0,158,15);
+    color: white;
+}
+#buttonDelete{
+    background-color: rgb(153,0,0);
+    color: white;
+}
+#buttonNo{
+    background-color: rgb(204,204,204);
+    color:black;
+    /* display:inline; */
+}
+p{
+    vertical-align: top;
+}
+textarea{
+    vertical-align: top;
+}
+/* #noBTN{
+    display:inline;
+    text-decoration: none;
+} */

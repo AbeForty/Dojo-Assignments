@@ -1,0 +1,170 @@
+*{
+    margin:0;
+    padding:0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#header{
+    margin-top:30px;
+    color:white;
+}
+#consulting{
+    color: rgb(19,112,171)
+}
+.nav li{
+    display:inline-block;
+    margin-right:40px;
+}
+.nav{
+    list-style-type: none;
+    display:inline-block;
+    text-align:right;
+    width:890px;
+    height:50px;
+    vertical-align: middle;
+    margin-top:20px;
+}
+body{
+    background-color: rgb(6,33,52);
+    width:1330px;
+}
+#logo{
+    font-size:30pt;
+    display:inline-block;
+    margin-left:20px;
+}
+#selectedLink{
+    color:rgb(46,97,174);
+}
+#selectedLinkFooter{
+    color:rgb(158,203,238);
+}
+#main{
+    margin:5px 20px 0px 20px;
+    background-color: white;
+    height:1200px;
+    width:1310px;
+}
+#footer{
+    background-color: rgb(218,237,255);
+    height:55px;
+    width:1310px;
+    margin:0px 20px 0px 20px
+}
+#banner{
+    width: 97%;
+    padding:20px;
+}
+.homebox{
+    background-color:rgb(24,108,168);
+    height:270px;
+    width:330px;
+    margin-left:70px;
+    display:inline-block;
+    margin-right:20px;
+    vertical-align: top;
+}
+.home-icon{
+    height:50px;
+    width:50px;
+    background-color: white;
+    border-radius:25px;
+}
+
+.box-title{
+    color:white;
+    vertical-align: middle;
+    font-size:20px;
+    margin-bottom:30px;
+    display: inline-block;
+    font-weight:bold;
+}
+.box-header{
+    height:50px;
+}
+.box-description{
+    font-size:10pt;
+    color:white;
+    padding:0px 20px 10px 20px;
+}
+.button{
+    background: linear-gradient(rgb(75,174,237), rgb(26,147,223));
+    width:125px;
+    height:50px;
+    border-radius:5px;
+    color:white;
+    border: none;
+    margin-left:15px;
+    font-size:15pt;
+}
+#box-area{
+    margin:auto;
+}
+.worldTitle{
+    color:rgb(36,70,76);
+    font-size:23pt;
+    margin-bottom:10px;
+    vertical-align: top;
+    width:450px;
+}
+#worldBeYours{
+    margin-top:25px;
+    margin-left:25px;
+    width:1310px;
+    height:305px;
+}
+#building{
+    height:250px;
+    width:400px;
+    margin-right:10px;
+    display: inline-block;
+}
+#learnMore{
+    font-size:15pt;
+    text-decoration: none;
+    color:rgb(115,155,184);
+    background-color:white;
+    border:none;
+}
+#goal{
+    width:320px;
+    margin-top:20px;
+    display:inline-block;
+    vertical-align: top;
+}
+#goalArea{
+    width:750px;
+    display: inline-block;
+}
+.speech-bubble {
+	position: relative;
+    background: rgb(218,237,255);
+    color:rgb(73,97,116);
+    font-size:23pt;
+    height:150px;
+    width:400px;
+    padding:20px;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: rgb(218,237,255);
+	border-bottom: 0;
+	margin-left: -100px;
+	margin-bottom: -20px;
+}
+#testimonyArea{
+    width:340px;
+    display:inline-block;
+    vertical-align: top;
+}
+#quoteCredit{
+    margin-top:30px;
+    font-size:10pt;
+    color:rgb(51,73,88);
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Amadon</title>
+    {% load static %}
+    <link title="no title" href="{% static '/styles.css' %}" rel="stylesheet" media="screen" charset="utf-8">
+</head>
+
+<body>
+    <h1>Amadon Store</h1>
+
+    <table>
+        <thead>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            <form action='/buy' method="POST">
+                {% csrf_token %}
+                <tr>
+
+                    <td>Dojo T shirt</td>
+                    <td>$19.99</td>
+                    <td>
+                        <select name='quantity'>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type='hidden' name='product_id' value='1015' />
+                        <button>Buy</button>
+                    </td>
+                </tr>
+            </form>
+            <form action='/buy' method="POST">
+                {% csrf_token %}
+                <tr>
+                    <td>Dojo Sweater</td>
+                    <td>$29.99</td>
+                    <td>
+                        <select name='quantity'>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type='hidden' name='product_id' value='1020' />
+                        <button>Buy</button>
+                    </td>
+                </tr>
+            </form>
+            <form action='/buy' method="POST">
+                {% csrf_token %}
+                <tr>
+                    <td>Dojo Cup</td>
+                    <td>$4.99</td>
+                    <td>
+                        <select name='quantity'>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type='hidden' name='product_id' value='1345' />
+                        <button>Buy</button>
+                    </td>
+                </tr>
+            </form>
+            <form action='/buy' method="POST">
+                {% csrf_token %}
+                <tr>
+                    <td>Algorithm Book</td>
+                    <td>$49.99</td>
+                    <td>
+                        <select name='quantity'>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type='hidden' name='product_id' value='1582' />
+                        <button>Buy</button>
+                    </td>
+                </tr>
+            </form>
+        </tbody>
+    </table>
+</body>
+
+</html>

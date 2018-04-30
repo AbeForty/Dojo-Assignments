@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book and Review</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/styles.css' %}" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+    <div id="header">
+            <div id="nav">
+                <a class ="navlink" href="/">Home</a>
+                <a class ="navlink" href="/logout">Logout</a>
+            </div>
+        </div>
+    <div id = "bookdetails">
+        <p name = "title">{{title}}</p>
+        <p name = "author">Author: {{author}}</p>
+        Reviews:
+        <hr>
+        {% for review in reviews %}
+            <div>
+                <p>{{review.book.title}}</p>
+                <div class="rating">
+                    {% if review.rating == 1%}                      
+                        <span class="starChecked"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                    {%endif%}    
+                    {% if review.rating == 2%}                      
+                        <span class="starChecked"></span>
+                        <span class="starChecked"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                    {%endif%}    
+                    {% if review.rating == 3%}                      
+                        <span class="starChecked"></span>
+                        <span class="starChecked"></span>
+                        <span class="starChecked"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                    {%endif%}
+                    {% if review.rating == 4%}                      
+                        <span class="starChecked"></span>
+                        <span class="starChecked"></span>
+                        <span class="starChecked"></span>
+                        <span class="starChecked"></span>
+                        <span class="star"></span>
+                    {%endif%}         
+                    {% if review.rating == 5%}                      
+                        <span class="starChecked"></span>
+                        <span class="starChecked"></span>
+                        <span class="starChecked"></span>
+                        <span class="starChecked"></span>
+                        <span class="starChecked"></span>
+                    {%endif%}                     
+                </div>
+                <br>
+                <div><a href = "/users/{{review.user.id}}">{{review.user.alias}}</a> says: {{review.review}}</div>
+                <br>
+                <span>Posted on {{review.created_at}}</span>                   
+                    {%if review.user.id == id %}
+                        <form id = "deleteReview" action = "/deleteReview/{{review.id}}" method = "POST">
+                            {%csrf_token%}
+                            <button id = "deleteBTN">Delete this review</button> 
+                        </form>                    
+                    {%endif%}
+            </div>
+            <hr>
+            {% empty %}
+                <p>No reviews exist yet. Why not add the first review? Add Review on the side.</p>
+            {% endfor %}
+    </div>
+    <div id = "addReview">
+        <h2>Add a review:</h2>
+        <form action="/addReview/{{book_id}}" method = "POST">
+            {% csrf_token %}
+            <label for="review">Review:</label>
+            <textarea name="review"></textarea>
+            <br>
+            <label for="rating">Rating:</label>
+            <input name="rating" type="number" value="1" min="1" max="5" />
+            <br>
+            <button>Submit Review</button>
+    </form>
+    </div>
+    
+
+</body>
+</html>

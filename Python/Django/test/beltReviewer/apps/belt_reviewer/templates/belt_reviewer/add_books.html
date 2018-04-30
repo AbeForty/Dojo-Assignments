@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book and Review</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/styles.css' %}" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+    <div id="header">
+        <div id="nav">
+            <a class ="navlink" href="/">Home</a>
+            <a class ="navlink" href="/logout">Logout</a>
+        </div>
+    </div>
+    <h2>Add a New Book Title and Review:</h2>
+    <form action = "/books/process" method = "POST">
+        {% csrf_token %}
+        <label for="title">Book Title:</label>
+        <input type="text" name="title">
+        <br>
+        <label for="authorDiv">Author:</label>
+        <div id ="authorDiv">
+            {%if authors  != null %}
+                <label for="author_name">Choose from the list:</label>
+                <select name="author_name">
+                    {% for author in authors %}
+                        <option value = "{{author.name}}">{{author.name}}</option>
+                    {%endfor%}
+                </select>
+                <br>
+                <label for="author">Or add a new author:</label>
+            {% else %}
+                <label for="author">Add a new author:</label>
+            {% endif %}
+
+            <input type="text" name="author">
+        </div>
+        <label for="review">Review:</label>
+        <textarea name="review"></textarea>
+        <br>
+        <label for="rating">Rating:</label>
+        <input name = "rating" type="number" value = "1" min="1" max="5"/>
+        <br> 
+        <button>Add Book and Review</button>
+    </form>
+</body>
+</html>

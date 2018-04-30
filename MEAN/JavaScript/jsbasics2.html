@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Basics II</title>
+</head>
+<body>
+    <script>
+    function magic_multiply(x, y){
+        if (x.constructor === Array && y.constructor === Number){
+            for(var i = 0; i < x.length; i++){
+                x[i] *= y;
+            }
+        }
+        else if (x.constructor === String && y.constructor === Number) {
+            for(var i = 0; i < y/2; i++){
+                x += x;
+            }
+        }
+        else {
+            x *= y;
+        }
+        return x;
+    }
+    console.log(magic_multiply(5,2))
+    console.log(magic_multiply(0,0))
+    console.log(magic_multiply([1,2,3],2))
+    console.log(magic_multiply(7,"three"))
+    let test5 = magic_multiply("Brendo", 4);
+    console.log(test5);
+    </script>
+</body>
+</html>

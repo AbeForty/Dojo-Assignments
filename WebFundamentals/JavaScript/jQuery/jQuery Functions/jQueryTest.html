@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="jQueryTest.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#book").hide();
+            $("#learnmore").hide();
+            $("#closeLearnMore").hide();
+            $(".bar").hide();
+            $(".barFade").hide();
+            $("#correctAnswer").hide();
+            $("#incorrectAnswer").hide();
+            $("#clickme").click(function () {
+                $("#book").slideToggle("slow", function () {
+                });
+            });
+            $("#btnCheckAnswer").click(function () {
+                var myText = $("#txtAnswer").val();
+                if (myText == 11) {
+                    $("#txtAnswer").last().removeClass("incorrectAnswer");
+                    $("#txtAnswer").last().addClass("correctAnswer");
+                    $("#correctAnswer").show();
+                    $("#incorrectAnswer").hide();
+                }
+                else {
+                    $("#txtAnswer").last().removeClass("correctAnswer");
+                    $("#txtAnswer").last().addClass("incorrectAnswer");
+                    $("#correctAnswer").hide();
+                    $("#incorrectAnswer").show();
+                }
+            });
+            $("#btnShowChart").click(function () {
+                if ($(".bar:first").is(":hidden")) {
+                    $(".bar").slideDown("slow");
+                } else {
+                    $(".bar").slideUp("slow");
+                }
+            });
+            $("#btnFadeChart").click(function () {
+                if ($(".barFade:first").is(":hidden")) {
+                    $(".barFade").fadeIn(100);
+                } else {
+                    $(".barFade").fadeOut(100);
+                }
+            });
+            $("#closeLearnMore").click(function () {
+                $("#learnmore").hide();
+                $("#closeLearnMore").hide();
+                $("#btnLearnMore").show();
+            });
+            $("#btnRevealDirections").click(function () {
+                $("h1").before("<b>Click the buttons or links to showcase jQuery </b>");
+            });
+            $("#btnGuessNumber").click(function () {
+                var randomNumber = Math.trunc(Math.random() * 50);
+                var numberGuessed = $("#txtAnswer").val();
+                if (numberGuessed == randomNumber) {
+                    $("#txtNumberAnswer").after("<p><b>Yes. My number was: " + randomNumber + "</b></p>");
+                }
+                else {
+                    $("#txtNumberAnswer").after("<p><b>Sorry. My number was: " + randomNumber + "</b></p>");
+                }
+            });
+            $("#btnLearnMore").click(function () {
+                $("#btnLearnMore").toggle(function () {
+                    $("#learnmore").hide();
+                    $("#closeLearnMore").hide();
+                }, function () {
+                    $("#learnmore").show();
+                    $("#closeLearnMore").show();
+                });
+            });
+            $("#btnHappyBirthday").click(function(){
+                $(".happy").html("<b>Happy</b> Birthday to You!");
+            });
+            $("#btnChangeColor").click(function(){
+                $( "button").attr( "style", "background-color: " + ($("#txtColor").val()));
+            });
+            $("#btnEnterComment").click(function () {
+                $("#name").append(" " + ("<p>" + $("#txtComment").val()+"</p>"));
+            });
+            $("#btnShowMeTheValues").click(function () {
+                $("div").data("test", { first: 22, last: "Wheel of Fortune!" });
+                $("span:first").text($("div").data("test").first);
+                $("span:last").text($("div").data("test").last);
+            });
+        });
+
+    </script>
+    <title>Testing with jQuery</title>
+</head>
+
+<body>
+    <h1>SlideToggle</h1>
+    <img id="book" src="building.png">
+    <button id="clickme">Click Me to SlideToggle</button>
+    <hr>
+    <h1>Show/Hide &amp; Toggle</h1>
+    <p>jQuery is a library for JavaScript that makes JavaScript work consistently across all browers.</p>
+    <a id="btnLearnMore" href="#">Learn more</a>
+    <p id="learnmore">Visit http://jQuery.com/ for more information on how to implement jQuery on your site and documentation.</p>
+    <a id="closeLearnMore" href="#">Close</a>
+    <hr>
+    <h1>Slide Up/Down Chart</h1>
+    <div id="bar1" class="bar"></div>
+    <div id="bar2" class="bar"></div>
+    <div id="bar3" class="bar"></div>
+    <button id="btnShowChart">Show me the chart</button>
+    <hr>
+    <h1>Fade In/Out Chart</h1>
+    <div id="bar4" class="barFade"></div>
+    <div id="bar5" class="barFade"></div>
+    <div id="bar6" class="barFade"></div>
+    <button id="btnFadeChart">Fade the chart</button>
+    <hr>
+    <h1>Add/Remove Class and val</h1>
+    <p>What is 5*3+2-6?</p>
+    <input id="txtAnswer" type="text" placeholder="Type in the correct answer">
+    <p id="correctAnswer">Correct.</p>
+    <p id="incorrectAnswer">Incorrect. Please try again.</p>
+    <button id="btnCheckAnswer">Check my answer</button>
+    <hr>
+    <h1>Before</h1>
+    <button id="btnRevealDirections">Reveal Directions</button>
+    <hr>
+    <h1>After</h1>
+    <input id="txtNumberAnswer" type="text" placeholder="Guess a number from 1-50.">
+    <button id="btnGuessNumber">Guess number</button>
+    <hr>
+    <h1>Append</h1>
+    <p id="name">I love pizza.</p>
+    <input id="txtComment" type="textarea" placeholder="Enter your comment.">
+    <button id="btnEnterComment">Enter your comment</button>
+    <hr>    
+    <h1>HTML</h1>
+    <p id="sad">So sad today. Nobody remembered my birthday.</p>
+    <p class="happy"></p>
+    <p class="happy"></p>
+    <p class="happy"></p>
+    <button id="btnHappyBirthday">Wish me a Happy Birthday!</button>
+    <hr>
+    <h1>attr and val</h1>
+    <input id="txtColor" placeholder = "Type in a color">
+    <button id="btnChangeColor">Change all buttons to your desired color.</button>
+    <hr>
+    <h1>data and text</h1>
+    <button id="btnShowMeTheValues">Show stored values</button>
+    Hello my age is <span></span> and my favorite TV show is <span></span>
+    <hr>
+</body>
+
+</html>

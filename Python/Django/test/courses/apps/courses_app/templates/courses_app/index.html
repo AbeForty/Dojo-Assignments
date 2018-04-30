@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add a student to all bootcamp courses</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}" media="screen" title="no title" charset="utf-8">
+</head>
+
+<body>
+    <h2>Add a new course</h2>
+    <form action="courses_app/add_course" method="POST">
+        {% csrf_token %}
+        <p>Name:
+            <input type="text" name="name"> </p>
+        <br>
+        <p>
+            Description:
+            <textarea name="description"></textarea>
+        </p>
+        <br>
+        <button id="buttonAdd">Add</button>
+    </form>
+    <h2>Courses</h2>
+    <table>
+        <thead>
+            <th>Course Name</th>
+            <th>Description</th>
+            <th>Date Added</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            {% for course in courses %}
+            <tr>
+                <td>{{course.name}}</td>
+                <td>{{course.desc.desc}}</td>
+                <td>{{course.created_at}}</td>
+                <td>
+                    <a href="courses_app/{{course.id}}/confirm_delete">remove</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td>No courses exist.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+     $(document).ready(function () {
+        $(".wheel").click(function () {
+            console.log("hello");
+            $(this).slideUp();
+        });
+        $("#restore").click(function () {
+           $("img").slideDown();
+        });
+    });
+    </script>
+    <style>
+        button{
+            display:block;
+        }
+    </style>
+    <title>Disappearing Ninja</title>
+</head>
+
+<body>
+    <img id="wheel1" class="wheel" src="WheelCenter.png" alt="Wheel of Fortune Logo">
+    <img id="wheel2" class="wheel" src="WheelCenter.png" alt="Wheel of Fortune Logo">
+    <img id="wheel3" class="wheel" src="WheelCenter.png" alt="Wheel of Fortune Logo">
+    <img id="wheel4" class="wheel" src="WheelCenter.png" alt="Wheel of Fortune Logo">
+    <img id="wheel5" class="wheel" src="WheelCenter.png" alt="Wheel of Fortune Logo">
+    <img id="wheel6" class="wheel" src="WheelCenter.png" alt="Wheel of Fortune Logo">
+    <img id="wheel7" class="wheel" src="WheelCenter.png" alt="Wheel of Fortune Logo">
+    <img id="wheel8" class="wheel" src="WheelCenter.png" alt="Wheel of Fortune Logo">
+    <button id="restore">Restore</button>
+</body>
+
+</html>

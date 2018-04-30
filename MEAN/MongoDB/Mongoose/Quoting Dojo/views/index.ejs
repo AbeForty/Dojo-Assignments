@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+    <h1>Welcome to Quoting Dojo</h1>
+    <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+    <% if(typeof(errors) != 'undefined' ) { %>
+        <% for (var x in errors) { %>
+         <h3><%= errors[x].message %></h3>
+        <% } %>
+    <% } %>
+   
+    <form action='/quotes' method='post'>
+        Your Name: <input type='text' name='name'>   
+        <br>
+        Your Quote:
+        <br>
+        <textarea name = 'quote'></textarea>
+        <br>
+        <input type='submit' value='Add to quotes'>
+    </form>
+    <a href = "/quotes"><button>Skip to quotes</button></a>
+</body>
+</html>

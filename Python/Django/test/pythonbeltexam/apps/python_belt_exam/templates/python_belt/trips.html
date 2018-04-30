@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/styles.css' %}" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+    <div id = "nav">
+        {%if name != "Guest"%}
+            <a href = "/logout">Logout</a>
+        {%else%}
+            <a href = "/">Login/Sign Up</a>
+        {%endif%}
+    </div>
+    <h2>Hello {{name}}</h2>
+    <h4>Your Trip Schedules</h4>
+    {%if yourTrips|length > 0 %}
+    <table>
+        <thead>
+            <th>Destination</th>
+            <th>Travel Start Date</th>
+            <th>Travel End Date</th>
+            <th>Plan</th>
+        </thead>
+        <tbody>
+            {%for trip in yourTrips%}
+                <tr>
+                    <td><a href="/travels/destinations/{{trip.destination.id}}">{{trip.destination.name}}</a></td>
+                    <td>{{trip.start_date|date:'M d Y'}}</td>
+                    <td>{{trip.end_date|date:'M d Y'}}</td>
+                    <td>{{trip.desc}}</td>
+                </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    {%else%}
+        {%if name != "Guest"%}
+            <p>No Trip Exists Yet. Create a trip by clicking Add Travel Plan Below.</p>
+        {%else%}
+            <p>You are not logged in. Please login to create trips.</p>
+        {%endif%}
+    {%endif%}
+    <h4>Other User's Travel Plans</h4>
+    {%if trips|length > 0 %}
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Destination</th>
+            <th>Travel Start Date</th>
+            <th>Travel End Date</th>
+            {%if name != "Guest"%}
+                <th>Do You Want to Join?</th>
+            {%endif%}
+        </thead>
+        <tbody>
+            {%for trip in trips%}
+                <tr>                    
+                    <td>{{trip.planner.name}}</td>
+                    <td><a href="/travels/destinations/{{trip.destination.id}}">{{trip.destination.name}}</a></td>
+                    <td>{{trip.start_date|date:'M d Y'}}</td>
+                    <td>{{trip.end_date|date:'M d Y'}}</td>
+                    {%if name != "Guest"%}
+                        <td>
+                            <form action="/travels/join/{{trip.id}}" method="POST">
+                                {%csrf_token%}                         
+                                <button class="linkButton">Join</button>
+                            </form>
+                        </td>
+                    {%endif%}
+                </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    {%else%}
+        <p>No Other Trip Exists Yet.</p>
+    {%endif%}
+    {%if name != "Guest"%}
+        <a href = "/travels/add">Add Travel Plan</button>
+    {%endif%}
+</body>
+</html>

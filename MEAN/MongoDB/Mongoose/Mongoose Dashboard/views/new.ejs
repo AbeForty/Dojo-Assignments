@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+    <h1>Create a new fish</h1>
+    <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+    <% if(typeof(errors) != 'undefined' ) { %>
+        <% for (var x in errors) { %>
+         <h3><%= errors[x].message %></h3>
+        <% } %>
+    <% } %>
+   
+    <form action='/fishes' method='post'>
+        Fish Name: <input type='text' name='name'>   
+        <br>
+        Fish Species:
+        <input type ='text' name = 'species'>
+        <br>
+        <input type='submit' value='Add to fishes'>
+    </form>
+</body>
+</html>

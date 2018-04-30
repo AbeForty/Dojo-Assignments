@@ -1,0 +1,12 @@
+    <h1>Other Plans in Your Area</h1>
+    {%for plan in userplans%}
+        <div class = "otherplan">
+            <p>Profile pic goes here.</p>
+            <p>{{plan.planner.nickname}}</p>
+            <p>{{plan.cuisine}}</p>
+            <p>{{plan.time}}</p>
+            <a href="/join">Join</a>
+        </div>
+    {%empty%}
+        <p>No other plans exist yet.</p>
+    {%endfor%}

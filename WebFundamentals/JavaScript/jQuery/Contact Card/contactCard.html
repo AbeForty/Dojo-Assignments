@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="contactCard.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(document).on("click", "#btnAddUser", function () {
+                $("#cards").append("<div class = \"contactCard\">" + "<h1 class=\"name\">" + $("#first_name").val() + " " + $("#last_name").val() + "</h1>" + "<p class=\"description\">" + $("#descriptionArea").val() + "</p>" + "<p class=\"descriptionLink\">Click for description!</p>" + "</div>");
+                $(".description").hide()
+            });
+        });
+        var descriptionVisible = false;
+        $(document).on("click", ".contactCard", function () {
+            if (descriptionVisible === false) {
+                descriptionVisible = true;
+                $(this).children(".name").hide()
+                $(this).children(".description").show()
+                $(this).children(".descriptionLink").text("Close description")
+            }
+            else {
+                descriptionVisible = false;
+                $(this).children(".name").show()
+                $(this).children(".description").hide()
+                $(this).children(".descriptionLink").text("Click for description!")
+            }
+        });
+    </script>
+    <title>The Codingdojo contact page</title>
+</head>
+
+<body>
+    <div id="userForm">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name">
+        <br>
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name">
+        <br>
+        <label for="descriptionArea">Description: </label>
+        <br>
+        <textarea name="descriptionArea" id="descriptionArea" placeholder="Enter description:"></textarea>
+        <br>
+        <button id="btnAddUser">Add User</button>
+    </div>
+    <div id="cards">
+
+    </div>
+</body>
+
+</html>

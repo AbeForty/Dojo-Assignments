@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Intermediate</title>
+</head>
+<body>
+    <script>
+        // let stars = starString(8)
+        // function starString(num){
+        //     starsStr = ""
+        //     for (var i = 0; i < num; i++){
+        //         starsStr += "*"
+        //     }
+        //     return starsStr
+        // }
+        // console.log(stars)
+        // let x = [4, 6, 1, 3, 5, 7, 25];
+        // function drawStars(arr){
+        //     var starsStr = "";
+        //     for (var i = 0; i < arr.length; i++){
+        //         for (var i2 = 0; i2 < arr[i]; i2++){
+        //              starsStr += "*";
+        //         }
+        //         starsStr += "\n";                 
+        //     }
+        //     return starsStr;
+        // }
+        // console.log(drawStars(x));
+        let x = [4, "Tom", 1, "Michael", 5, 7, "Jimmy Smith"]
+        function drawStars(arr){                    
+            var starsStr = "";
+            for (var i = 0; i < arr.length; i++){
+                if (arr[i].constructor == Number){
+                    for (var i2 = 0; i2 < arr[i]; i2++){
+                        starsStr += "*";
+                    }
+                    starsStr += "\n";                 
+                }
+                else if (arr[i].constructor == String){
+                    for (var i2 = 0; i2 < arr[i].length; i2++){
+                        starsStr += arr[i].toLowerCase().charAt(0);
+                    }
+                    starsStr += "\n";                 
+                }
+            }
+            return starsStr;
+        }
+        console.log(drawStars(x));
+    </script>
+</body>
+</html>

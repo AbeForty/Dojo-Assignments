@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quoting Dojo</title>
+</head>
+<body>
+    <h1>Here are the awesome quotes!</h1>
+    <!-- <h1>Dojo Survey</h1>
+    <h4>Fill out this survey</h4> -->
+    <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+    <% quotes.forEach(function (quote) { %>
+        <p><%= quote.quote %></p> <!-- note you defined the field as Name not name -->
+        <p> - <%= quote.name %> at   <%= quote.createdAt %></p> 
+        <hr>
+    <% }) %>
+    <!-- <% for (myQuote in quotes) { %>
+        <p><%= myQuote.quote %></p>
+        <p><%= myQuote.createdAt %></p>
+    <% } %> -->
+</body>
+</html>

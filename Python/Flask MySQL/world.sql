@@ -1,0 +1,1 @@
+SELECT countries.name, cities.name, cities.district, cities.population from countries, cities where cities.district = 'Bueno Aires' 

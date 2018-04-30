@@ -1,0 +1,15 @@
+.contactCard{
+    height:150px;
+    width:300px;
+    border: solid black 1px;
+    text-align:center;
+}
+#cards{
+    display:inline-block;
+    width:300px;
+    vertical-align: top;
+}
+#userForm{
+    display:inline-block;
+    width:500px;
+}

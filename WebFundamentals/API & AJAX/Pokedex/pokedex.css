@@ -1,0 +1,23 @@
+#pokeside{
+    display:inline-block;
+    width:350px;
+    height:770px;
+    vertical-align: top;
+    background-color: red;
+}
+#pokeinfo{
+    background-color:white;
+    width:300px;
+    margin:auto;
+    margin-top:50px;
+    overflow: hidden;
+}
+#pokemon{
+    width:980px;
+    height:770px;
+    overflow: scroll;
+    display:inline-block;
+}
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}

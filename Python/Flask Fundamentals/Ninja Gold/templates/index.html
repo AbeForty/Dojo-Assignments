@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ninja Gold</title>
+    <style>
+        #message_log{
+            height:300px;
+            width:1020px;
+            overflow: scroll;
+        }
+        span{
+            height:125px;
+            width:250px;
+            display:inline-block;
+            text-align:center;
+            border: solid black 1px;
+        }
+        .Win{
+            color:green
+        }
+        .Lose{
+            color:red;
+        }
+    </style>
+</head>
+
+<body>
+    Your Gold:
+    <input name="goldBox" type="text" readonly=true value = {{coins}}>
+    <br>
+    <br>
+    <div>
+        <span>Farm
+            <form action="/process_money" method="post">
+                <p>(earns 10-20 golds)</p>
+                <br>
+                <input type="hidden" name="building" value="farm" />
+                <button name = "findGold">Find Gold!</button>
+            </form>
+        </span>
+        <span>Cave
+            <form action="/process_money" method="post">
+                <p>(earns 5-10 golds)</p>
+                <br>
+                <input type="hidden" name="building" value="cave" />
+                <button name = "findGold">Find Gold!</button>
+            </form>
+        </span>
+        <span>House
+            <form action="/process_money" method="post">
+                <p>(earns 2-5 golds)</p>
+                <br>
+                <input type="hidden" name="building" value="house" />
+                <button name = "findGold">Find Gold!</button>
+            </form>
+        </span>
+        <span>Casino
+        <form action="/process_money" method="post">
+            <p>(earns/takes 0-50 golds)</p>
+            <br>
+            <input type="hidden" name="building" value="casino" />
+            <button name = "findGold">Find Gold!</button>
+            </form> 
+        </span>
+    </div>
+    <br>
+    Activities: 
+    <br>
+    <div id = "message_log">        
+        {% for message in session['message'] %}
+            {% if message.find("Earned")!=-1 or message.find("won")!=-1 %}
+                <p class = "Win">{{message}}</p>
+            {% else %}
+                <p class = "Lose">{{message}}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <br>
+    <form action ="/reset" method="post"> 
+        <button>Reset</button>
+    </form>
+   
+</body>
+</html>

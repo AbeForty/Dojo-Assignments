@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type ="text/javascript">
+        $(document).ready(function(){
+           // this triggers the connection event in our server!
+           var socket  = io.connect();
+           // we'll write all the socket stuff after the above line!
+           $('button').click(function () {
+                socket.emit("posting_data", {name: $("#name").val(), location: $("#location").val(), language: $("#language").val(), comment: $("#comment").val()});
+            });
+            socket.on('updated_message', function (data) {
+              $("#dataMessage").html(data.response);
+            });
+        })
+   </script>
+</head>
+<body>
+    <h1>Dojo Survey</h1>
+    <h4>Fill out this survey</h4>
+    <div id = "submittedData"><p id ="dataMessage"></p></div>
+    <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+    <!-- <form action='/process' method='post'> -->
+        Your Name: <input type='text' name='name' id = 'name'>   
+        <br>     
+        Dojo Location:        
+        <select name="location" id = "location">
+            <option value="Burbank">Burbank</option>
+            <option value="San Jose">San Jose</option>
+            <option value="Seattle">Seattle</option>
+            <option value="Dallas">Dallas</option>
+            <option value="Tulsa">Tulsa</option>
+            <option value="New York">New York</option>
+            <option value="Chicago">Chicago</option>
+            <option value="Washington DC">Washington DC</option>
+        </select>
+        <br>
+        Favorite Language:
+        <select name="language" id = "language">
+            <option value="JavaScript">JavaScript</option>
+            <option value="Python">Python</option>
+            <option value="C#.NET">C#.NET</option>
+            <option value="Ruby">Ruby</option>
+            <option value="MEAN">MEAN</option>
+            <option value="Java">Java</option>
+            <option value="VB.NET">VB.NET</option>
+            <option value="Swift">Swift</option>
+        </select>
+        <br>
+        Comment (optional):
+        <br>
+        <textarea name = 'comment' id = "comment"></textarea>
+        <br>
+        <button>Submit</button>
+    <!-- </form> -->
+</body>
+</html>

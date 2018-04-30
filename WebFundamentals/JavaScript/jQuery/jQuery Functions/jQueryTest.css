@@ -1,0 +1,49 @@
+#bar1{
+    height:250px;
+    background-color: blue;
+}
+#bar2{
+    height:150px;
+    background-color: green;
+}
+#bar3{
+    height:450px;
+    background-color: red;
+}
+.bar{
+    width:150px;
+    display:inline-block;
+}
+#bar4{
+    height:350px;
+    background-color: purple;
+}
+#bar5{
+    height:550px;
+    background-color: orange;
+}
+#bar6{
+    height:150px;
+    background-color: yellowgreen;
+}
+.barFade{
+    width:150px;
+    display:inline-block;
+}
+button{ 
+    display:block;
+}
+.incorrectAnswer{
+    background-color: red;
+    color:white;
+}
+.correctAnswer{
+    background-color: green;
+    color:white;
+}
+.comment{
+    display:block;
+}
+.happy{
+    color:blue;
+}

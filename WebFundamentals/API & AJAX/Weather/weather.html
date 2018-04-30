@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <!-- <link rel="stylesheet" type="text/css" href="pokedex.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(document).on("click", "#btnOK", function () {
+                $.get("http://api.openweathermap.org/data/2.5/weather?q="+ $("#txtCity").val()+"&&appid=75ae9e5e0fdf89d119a88f2ba1fdfccb", function (data) {
+                    var ftemp = 9/5 * (data.main.temp - 273) + 32;
+                    var ctemp = (5 / 9) * (ftemp - 32);;
+                    $("#weatherInfo").append("<h1>"+$("#txtCity").val()+"</h1><p><b>Temperature</b></p>"+"<p>" +  Math.floor(ftemp) + " °F</p>" +  "<p>" +  Math.floor(ctemp) + " °C</p>"+ "<p>" + Math.floor(data.main.temp) + " °K</p>");                  
+                }, "json");
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="weather">
+        <input id = "txtCity" text ="" placeholder="Enter a city">
+        <button id = "btnOK">Search the Weather</button>
+    </div>
+    <div id = "weatherInfo">
+        
+    </div>
+</body>
+
+</html>

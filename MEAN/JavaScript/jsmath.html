@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Basics II</title>
+</head>
+<body>
+    <script>
+    // function zero_negativity(arr){
+    //     var negative = false;
+    //     for (var i = 0; i < arr.length; i++){
+    //         if (Math.sign(arr[i]) < 0){
+    //             negative = true;
+    //             return negative;
+    //         }
+    //     }
+    //     return negative;
+    // }
+    // console.log(zero_negativity([1,2,-5,10,-15,20]))
+    // function isEven(num){
+    //     if (num % 2 == 0){
+    //         return true;
+    //     }
+    //     return false;
+    // }
+    // // console.log(isEven(1));
+    // function howManyEven(arr){
+    //     var evens = 0;
+    //     for (var i = 0; i < arr.length; i++){
+    //         if (isEven(arr[i]) === true){
+    //             evens += 1
+    //         }           
+    //     } 
+    //     return evens;
+    // }
+    // console.log(howManyEven([1,5,2,4,3,6]));
+    // function create_dummy_array(n){
+    //     var arr = [];
+    //     for(var i = 0; i < n; i++){
+    //         arr.push(Math.floor(Math.random() * 10));
+    //     }
+    //     return arr;
+    // }
+    // console.log(create_dummy_array(15));
+    function random_choice(arr){
+        rand = Math.floor(Math.random() * arr.length);
+        return arr[rand];
+    }
+    console.log(random_choice([1,5,9,13,2,6]));
+    </script>
+</body>
+</html>

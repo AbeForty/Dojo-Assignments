@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Word Generator</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'random_word_generator/styles.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+    <p>Random Word (attempt # {{number}})</p>
+    <p id = "rand_string">{{random_string}}</p>
+    <form action="/generate" method = "POST">
+        {% csrf_token %}       
+        <button>Generate</button>
+    </form>
+    <p>{{unique_id}}</p>
+</body>
+</html>

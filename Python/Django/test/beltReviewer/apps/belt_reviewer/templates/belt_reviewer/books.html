@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Books Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/styles.css' %}" media="screen" title="no title" charset="utf-8">
+</head>
+
+<body>
+    <div id="header">       
+        <h2 id ="welcome">Welcome, {{alias}}</h2>
+        <div id="nav">
+                <a class="navlink" href="/books/add">Add Book and Review</a>
+                <a class="navlink" href="/logout">Logout</a>
+        </div>    
+    </div>
+    <div id="recentReviews">
+        <h2>Recent Book Reviews:</h2>
+            {% for review in reviews %}
+                <div>
+                    <p><a href = "/books/{{review.book.id}}">{{review.book.title}}</a></p>
+                 
+                    <div class="rating">
+                        {% if review.rating == 1%}                      
+                            <span class="starChecked"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                        {%endif%}    
+                        {% if review.rating == 2%}                      
+                            <span class="starChecked"></span>
+                            <span class="starChecked"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                        {%endif%}    
+                        {% if review.rating == 3%}                      
+                            <span class="starChecked"></span>
+                            <span class="starChecked"></span>
+                            <span class="starChecked"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                        {%endif%}
+                        {% if review.rating == 4%}                      
+                            <span class="starChecked"></span>
+                            <span class="starChecked"></span>
+                            <span class="starChecked"></span>
+                            <span class="starChecked"></span>
+                            <span class="star"></span>
+                        {%endif%}         
+                        {% if review.rating == 5%}                      
+                            <span class="starChecked"></span>
+                            <span class="starChecked"></span>
+                            <span class="starChecked"></span>
+                            <span class="starChecked"></span>
+                            <span class="starChecked"></span>
+                        {%endif%}      
+                    </div>
+                    <br>
+                    <div><a href = "/users/{{review.user.id}}">{{review.user.alias}}</a> says: {{review.review}}</div>
+                    <br>
+                    <span>Posted on {{review.created_at}}</span>                     
+                        {%if review.user.id == id %}
+                        <form id = "deleteReview" action = "/deleteReview/{{review.id}}" method = "POST">
+                            {%csrf_token%}
+                            <button id = "deleteBTN">Delete this review</button> 
+                        </form>
+                        {%endif%}                 
+                </div>
+            {% empty %}
+                <p>No books exist yet. Why not add the first book? Click Add Book and Review on top.</p>
+            {% endfor %}
+    </div>
+    <div id="otherReviews">
+        <h2>Other Books with Reviews:</h2>
+        {% if otherbooks|length > 0 %}
+            {% for review in otherbooks %}
+            <div>
+                <a href = "/books/{{review.book.id}}"><p>{{review.book.title}}</p></a>      
+            </div>
+            {%endfor%}
+        {% else %}
+            <p>No other books exist. Why not add another book? Click Add Book and Review on top.</p>        
+        {%endif%}
+    </div>
+
+</body>
+
+</html>
